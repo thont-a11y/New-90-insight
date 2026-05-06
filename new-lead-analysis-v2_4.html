@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phân Tích Tập KH New Lead – Ahamove Hà Nội</title>
+<style>
+:root {
+  --bg: #f8f9fc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text: #1a202c;
+  --sub: #64748b;
+  --accent: #FF7F32;
+  --accent-light: #fff4ed;
+  --blue: #2563EB;
+  --blue-light: #eff6ff;
+  --green: #16a34a;
+  --green-light: #f0fdf4;
+  --red: #dc2626;
+  --red-light: #fef2f2;
+  --yellow: #d97706;
+  --yellow-light: #fffbeb;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:24px 16px}
+
+/* Header */
+.report-header{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px 32px;margin-bottom:20px;border-left:5px solid var(--accent)}
+.badge{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.5px;margin-bottom:10px}
+.report-header h1{font-size:clamp(18px,3vw,24px);font-weight:800;color:var(--text);line-height:1.3}
+.report-header .sub{color:var(--sub);font-size:13px;margin-top:6px}
+
+/* SCR */
+.scr-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.scr-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px}
+.scr-label{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.scr-card.s .scr-label{color:var(--blue)}
+.scr-card.c .scr-label{color:var(--red)}
+.scr-card.r .scr-label{color:var(--green)}
+.scr-card p{font-size:13px;color:var(--sub);line-height:1.6}
+
+/* KPI row */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.kpi-val{font-size:28px;font-weight:800;line-height:1;margin-bottom:4px}
+.kpi-label{font-size:12px;color:var(--sub)}
+.kpi-sub{font-size:11px;color:var(--sub);margin-top:4px}
+.kpi.accent{border-left:4px solid var(--accent)}.kpi.accent .kpi-val{color:var(--accent)}
+.kpi.blue{border-left:4px solid var(--blue)}.kpi.blue .kpi-val{color:var(--blue)}
+.kpi.green{border-left:4px solid var(--green)}.kpi.green .kpi-val{color:var(--green)}
+.kpi.red{border-left:4px solid var(--red)}.kpi.red .kpi-val{color:var(--red)}
+
+/* Section */
+section{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px 24px;margin-bottom:16px}
+.sec-title{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--sub);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.sec-title span.dot{width:8px;height:8px;border-radius:50%;display:inline-block;background:var(--accent)}
+h2.section-h{font-size:15px;font-weight:700;margin-bottom:10px}
+
+/* Bar charts */
+.bar-group{margin-bottom:10px}
+.bar-label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px}
+.bar-label .name{color:var(--text);font-weight:500;max-width:72%}
+.bar-label .val{color:var(--sub);font-variant-numeric:tabular-nums;font-weight:600}
+.bar-track{background:#f1f5f9;border-radius:4px;height:8px;overflow:hidden}
+.bar-fill{height:8px;border-radius:4px}
+
+/* Two col */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+/* Table */
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#f8f9fc;font-weight:700;text-align:left;padding:8px 10px;border-bottom:2px solid var(--border);white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:middle}
+td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fafafa}
+
+/* Insight box */
+.insight{border-radius:8px;padding:14px 16px;margin-top:12px}
+.insight-orange{background:var(--accent-light);border:1px solid #ffd9b8}
+.insight-blue{background:var(--blue-light);border:1px solid #bfdbfe}
+.insight-green{background:var(--green-light);border:1px solid #bbf7d0}
+.insight-red{background:var(--red-light);border:1px solid #fecaca}
+.insight-yellow{background:var(--yellow-light);border:1px solid #fde68a}
+.insight-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:7px}
+.insight-orange .insight-title{color:var(--accent)}
+.insight-blue .insight-title{color:var(--blue)}
+.insight-green .insight-title{color:var(--green)}
+.insight-red .insight-title{color:var(--red)}
+.insight-yellow .insight-title{color:var(--yellow)}
+.insight ul{padding-left:16px;font-size:12.5px;color:var(--text);line-height:1.9}
+.insight p{font-size:12.5px;color:var(--text);line-height:1.7}
+
+/* Divider */
+.divider{border:none;border-top:1px solid var(--border);margin:16px 0}
+
+/* Priority criteria cards */
+.criteria-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.criteria-card{border-radius:10px;padding:18px;border:2px solid}
+.criteria-card.truck{background:#f0fdf4;border-color:#86efac}
+.criteria-card.open{background:var(--blue-light);border-color:#93c5fd}
+.criteria-card.sme{background:var(--accent-light);border-color:#fed7aa}
+.cc-icon{font-size:24px;margin-bottom:8px}
+.cc-count{font-size:32px;font-weight:900;line-height:1;margin-bottom:2px}
+.cc-label{font-size:12px;font-weight:700;margin-bottom:6px}
+.cc-desc{font-size:11.5px;color:var(--sub);line-height:1.6}
+.criteria-card.truck .cc-count{color:var(--green)}
+.criteria-card.open .cc-count{color:var(--blue)}
+.criteria-card.sme .cc-count{color:var(--accent)}
+
+/* Total bar */
+.total-bar{background:var(--surface);border:2px solid var(--accent);border-radius:10px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.total-bar .tb-main{font-size:36px;font-weight:900;color:var(--accent)}
+.total-bar .tb-sub{font-size:13px;color:var(--sub)}
+.total-bar .tb-label{font-size:12px;font-weight:700}
+
+/* Status mini table */
+.status-split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.status-box{border-radius:8px;padding:14px 16px;border:1px solid}
+.status-box.prio{background:#f0fdf4;border-color:#86efac}
+.status-box.non{background:#fef2f2;border-color:#fca5a5}
+.sb-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.status-box.prio .sb-title{color:var(--green)}
+.status-box.non .sb-title{color:var(--red)}
+.sb-row{display:flex;justify-content:space-between;font-size:12px;padding:3px 0;border-bottom:1px solid rgba(0,0,0,.05)}
+.sb-row:last-child{border-bottom:none;font-weight:700}
+
+/* Pill */
+.pill{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600;margin:2px}
+.pill-green{background:var(--green-light);color:var(--green)}
+.pill-red{background:var(--red-light);color:var(--red)}
+.pill-blue{background:var(--blue-light);color:var(--blue)}
+.pill-orange{background:var(--accent-light);color:var(--accent)}
+.pill-gray{background:#f1f5f9;color:var(--sub)}
+.pill-yellow{background:var(--yellow-light);color:var(--yellow)}
+
+footer{text-align:center;color:var(--sub);font-size:11px;padding:20px 0}
+
+@media(max-width:640px){
+  .kpi-row,.criteria-row,.three-col{grid-template-columns:1fr 1fr}
+  .scr-row,.two-col,.status-split{grid-template-columns:1fr}
+  .total-bar{flex-direction:column;text-align:center}
+}
+@media print{
+  body{background:#fff}
+  .wrap{max-width:100%;padding:12px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<header class="report-header">
+  <div class="badge">TELESALES ANALYSIS · HÀ NỘI · Q2/2026</div>
+  <h1>Phân Tích Tập KH New Lead — Chưa Phát Sinh Đơn Hàng</h1>
+  <div class="sub">481 KH tạo tài khoản 29/03 – 09/04/2026 · Thị trường: HAN · Nguồn: Book2.xlsx</div>
+</header>
+
+<!-- SCR -->
+<div class="scr-row">
+  <div class="scr-card s">
+    <div class="scr-label">Situation</div>
+    <p>481 KH đăng ký Ahamove tại Hà Nội, <strong>100% chưa phát sinh đơn</strong>. Toàn bộ đã thao tác chọn dịch vụ trên app — có ý định sử dụng nhưng chưa convert.</p>
+  </div>
+  <div class="scr-card c">
+    <div class="scr-label">Complication</div>
+    <p>Chỉ <strong>46.6% KH nghe máy</strong>. Trong nhóm đã gọi, lý do chưa đặt hàng đầu là <em>xem thử/so sánh giá</em> (47%) và <em>không có tài xế nhận</em> (30%) — tức <strong>vấn đề supply, không phải lỗi sale</strong>.</p>
+  </div>
+  <div class="scr-card r">
+    <div class="scr-label">Resolution</div>
+    <p>Tập này là <strong>baseline đánh giá chất lượng tiêu chí lọc</strong>. Các chỉ số contact rate, loại KH, lý do chưa đặt hàng và signal hành vi app sẽ là thước đo để chuẩn hóa điều kiện lọc cho các tập tương lai. Cần báo cáo Ops về vấn đề thiếu tài xế.</p>
+  </div>
+</div>
+
+<!-- KPI ROW -->
+<div class="kpi-row">
+  <div class="kpi accent">
+    <div class="kpi-val">481</div>
+    <div class="kpi-label">Tổng KH trong tập</div>
+    <div class="kpi-sub">100% đã thao tác chọn dịch vụ</div>
+  </div>
+  <div class="kpi green">
+    <div class="kpi-val">46.6%</div>
+    <div class="kpi-label">Tỷ lệ nghe máy</div>
+    <div class="kpi-sub">224 / 481 KH gọi thành công</div>
+  </div>
+  <div class="kpi blue">
+    <div class="kpi-val">74.4%</div>
+    <div class="kpi-label">KH đã nhập địa chỉ</div>
+    <div class="kpi-sub">358 / 481 KH · engagement cao</div>
+  </div>
+  <div class="kpi red">
+    <div class="kpi-val">53.4%</div>
+    <div class="kpi-label">Chưa liên hệ được</div>
+    <div class="kpi-sub">257 KH · 1 hoặc 2 lần thử</div>
+  </div>
+</div>
+
+<!-- SECTION 1: CALL RATE -->
+<section>
+  <div class="sec-title"><span class="dot"></span>1. Tỷ Lệ Nghe Máy</div>
+  <div class="two-col">
+    <div>
+      <h2 class="section-h">Phân bổ tình trạng liên hệ</h2>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">✅ Đã gọi (nghe máy)</span><span class="val">224 · 46.6%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:46.6%;background:var(--green)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">⚠️ Không LH được 1 lần</span><span class="val">214 · 44.5%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:44.5%;background:var(--yellow)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">❌ Không LH được 2 lần</span><span class="val">43 · 8.9%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:8.9%;background:var(--red)"></div></div>
+      </div>
+
+    </div>
+    <div>
+      <h2 class="section-h">App Open Count — Mức Độ Tương Tác</h2>
+      <p style="font-size:12px;color:var(--sub);margin-bottom:10px">Trung bình <strong>12.4 lần</strong> · Median <strong>9 lần</strong> · Điều kiện lọc tối thiểu: 5 lần</p>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">= 5 lần (cận ngưỡng tối thiểu)</span><span class="val">80 · 16.7%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:80%;background:#cbd5e1"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">6–10 lần</span><span class="val">198 · 41.2%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:41.2%;background:var(--yellow)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">11–19 lần (active)</span><span class="val">134 · 27.9%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:27.9%;background:var(--blue)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">≥ 20 lần (rất active — tiêu chí ưu tiên)</span><span class="val">69 · 14.3%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:14.3%;background:var(--accent)"></div></div>
+      </div>
+      <div class="insight insight-orange" style="margin-top:14px">
+        <div class="insight-title">📊 Signal chất lượng</div>
+        <ul>
+          <li><strong>69 KH mở app ≥20 lần</strong> — hành vi tìm hiểu rất chủ động, đây là tín hiệu intent mạnh nhất có thể đo được trước khi gọi</li>
+          <li>80 KH chỉ mở đúng 5 lần → intent thấp, chất lượng kém nhất trong tập</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: LOẠI KH -->
+<section>
+  <div class="sec-title"><span class="dot"></span>2. Phân Loại Khách Hàng</div>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:14px">Chỉ <strong>224 KH nghe máy</strong> mới có thể phân loại được. 257 KH chưa tiếp cận được vẫn chưa xác định loại.</p>
+  <div class="two-col">
+    <div>
+      <h2 class="section-h">Phân bổ trong nhóm đã gọi (n=224)</h2>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">👤 Cá nhân</span><span class="val">190 · 84.8%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:84.8%;background:var(--blue)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">🏢 SME</span><span class="val">13 · 5.8%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:5.8%;background:var(--accent)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">🚗 Tài xế (lọc ra)</span><span class="val">10 · 4.5%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:4.5%;background:var(--yellow)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">🏭 Enterprise / Cor</span><span class="val">3 · 1.3%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:1.3%;background:var(--purple)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">❓ Chưa xác định</span><span class="val">8 · 3.6%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:3.6%;background:#cbd5e1"></div></div>
+      </div>
+    </div>
+    <div>
+      <h2 class="section-h">Insight theo từng nhóm</h2>
+      <div style="margin-bottom:10px;padding:12px 14px;border-radius:8px;background:var(--blue-light);border:1px solid #bfdbfe">
+        <div style="font-size:11px;font-weight:800;color:var(--blue);margin-bottom:6px">👤 CÁ NHÂN (84.8%) — Chiếm đa số</div>
+        <ul style="padding-left:14px;font-size:12px;line-height:1.8;color:var(--text)">
+          <li>Nhu cầu chủ yếu: <strong>đồ cá nhân, chuyển nhà</strong></li>
+          <li>Tần suất thấp: đa số &lt;5 đơn/tháng → LTV không cao</li>
+          <li>76.8% đã nhập địa chỉ → intent có nhưng cần push thêm</li>
+          <li>Gợi ý: offer <strong>voucher đơn đầu</strong> + hướng dẫn đặt qua Zalo</li>
+        </ul>
+      </div>
+      <div style="padding:12px 14px;border-radius:8px;background:var(--accent-light);border:1px solid #fed7aa">
+        <div style="font-size:11px;font-weight:800;color:var(--accent);margin-bottom:6px">🏢 SME + ENTERPRISE (7.1%) — Ưu tiên cao nhất</div>
+        <ul style="padding-left:14px;font-size:12px;line-height:1.8;color:var(--text)">
+          <li>Chỉ 16 KH nhưng <strong>tiềm năng repeat order cao</strong>, giá trị LTV lớn</li>
+          <li>Auto gọi ngay khi phát hiện, assign AM riêng</li>
+          <li>Hỏi thêm: volume/tháng, loại hàng, khu vực giao</li>
+        </ul>
+      </div>
+      <div style="margin-top:8px;padding:10px 14px;border-radius:8px;background:var(--yellow-light);border:1px solid #fde68a">
+        <div style="font-size:11px;font-weight:800;color:var(--yellow);margin-bottom:4px">🚗 TÀI XẾ (4.5%) — Sai tập</div>
+        <p style="font-size:12px;color:var(--text)">Lọc ra khỏi tập telesales ngay. Chuyển sang bộ phận <strong>tuyển dụng tài xế</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: CHOSEN SERVICE -->
+<section>
+  <div class="sec-title"><span class="dot"></span>3. Dịch Vụ Quan Tâm (Chosen Service)</div>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:14px">Một KH có thể thao tác nhiều dịch vụ. <strong>Truck Delivery + House Moving là tiêu chí ưu tiên gọi</strong> do giá trị đơn cao và nhu cầu rõ ràng hơn.</p>
+  <div class="two-col">
+    <div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Multi-service (xem nhiều loại)</span><span class="val">190 · 39.5%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:39.5%;background:var(--accent)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Bike Delivery only</span><span class="val">114 · 23.7%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:23.7%;background:var(--blue)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Truck Delivery only</span><span class="val">71 · 14.8%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:14.8%;background:var(--green)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">House Moving only</span><span class="val">25 · 5.2%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:5.2%;background:var(--purple)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Food Delivery only</span><span class="val">18 · 3.7%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:3.7%;background:#0891B2"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Nationwide Delivery</span><span class="val">6 · 1.2%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:1.2%;background:var(--yellow)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Không rõ (NaN)</span><span class="val">57 · 11.9%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:11.9%;background:#cbd5e1"></div></div>
+      </div>
+    </div>
+    <div>
+      <h2 class="section-h">KH có Truck/House trong chosen service</h2>
+      <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px;margin-bottom:10px">
+        <div style="font-size:28px;font-weight:900;color:var(--green);line-height:1">267</div>
+        <div style="font-size:12px;color:var(--sub);margin-top:2px">KH có thao tác Truck hoặc House Moving<br>(bao gồm cả multi-service) · <strong>55.5% tổng tập</strong></div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Loại KH (trong 267)</th><th style="text-align:right">Số KH</th><th style="text-align:right">%</th></tr></thead>
+          <tbody>
+            <tr><td>Chưa xác định (chưa gọi được)</td><td class="num">133</td><td class="num">49.8%</td></tr>
+            <tr><td>Cá nhân</td><td class="num">126</td><td class="num">47.2%</td></tr>
+            <tr><td>SME</td><td class="num">6</td><td class="num">2.2%</td></tr>
+            <tr><td>Enterprise</td><td class="num">2</td><td class="num">0.7%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight insight-green" style="margin-top:10px">
+        <div class="insight-title">💡 Tại sao Truck/House là tiêu chí tốt?</div>
+        <ul>
+          <li>Giá trị đơn hàng cao hơn đáng kể so với Bike/Food</li>
+          <li>Nhu cầu thường có timeline cụ thể (ngày chuyển nhà, ngày giao hàng lớn)</li>
+          <li>KH chủ động tìm hiểu → intent rõ ràng hơn</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: SURVEY INSIGHTS -->
+<section>
+  <div class="sec-title"><span class="dot"></span>4. Insight Từ Survey (224 KH Đã Gọi)</div>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:14px">Chất lượng data survey <strong>còn thấp</strong> — nhiều trường bị bỏ trống. Các con số dưới đây chỉ tính trên phần KH có trả lời.</p>
+  <div class="two-col">
+    <div>
+      <h2 class="section-h">Lý do chưa lên đơn <span style="font-size:11px;color:var(--sub);font-weight:400">(95/224 KH trả lời)</span></h2>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Chỉ muốn xem thử / so sánh giá</span><span class="val">45 · 47.4%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:47.4%;background:var(--yellow)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Không có tài xế nhận chuyến</span><span class="val">29 · 30.5%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:30.5%;background:var(--red)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Khác</span><span class="val">17 · 17.9%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:17.9%;background:#cbd5e1"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Giá cao hơn mong đợi</span><span class="val">2 · 2.1%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:2.1%;background:var(--purple)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Khó thao tác / lỗi app</span><span class="val">2 · 2.1%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:2.1%;background:#0891B2"></div></div>
+      </div>
+      <div class="insight insight-red" style="margin-top:12px">
+        <div class="insight-title">🚨 Vấn Đề Supply — Cần Báo Ngay Ops</div>
+        <ul>
+          <li><strong>30.5% KH không đặt được vì thiếu tài xế</strong> — đây là lỗi supply-side, không phải lỗi sale hay app</li>
+          <li>Nếu không fix được supply, việc gọi điện sẽ thu hút KH nhưng không giữ được</li>
+          <li>Cần escalate ngay lên team Ops HAN để tăng cung tài xế khu vực phụ trách</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <h2 class="section-h">Sẵn lòng sử dụng lại <span style="font-size:11px;color:var(--sub);font-weight:400">(134/224 KH trả lời)</span></h2>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Chưa có nhu cầu tương lai gần</span><span class="val">98 · 73.1%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:73.1%;background:var(--red)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">✅ Sẽ thử lại</span><span class="val">28 · 20.9%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:20.9%;background:var(--green)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Có thể nếu có ưu đãi thêm</span><span class="val">8 · 6.0%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:6%;background:var(--accent)"></div></div>
+      </div>
+
+      <hr class="divider">
+
+      <h2 class="section-h">Yếu tố chọn app <span style="font-size:11px;color:var(--sub);font-weight:400">(50/224 KH trả lời)</span></h2>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">🚀 Tốc độ giao nhanh</span><span class="val">16 · 32.0%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:32%;background:var(--green)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">💰 Giá hợp lý</span><span class="val">13 · 26.0%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:26%;background:var(--blue)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">🛡️ Uy tín tài xế</span><span class="val">6 · 12.0%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:12%;background:var(--purple)"></div></div>
+      </div>
+      <div class="insight insight-blue" style="margin-top:12px">
+        <div class="insight-title">💬 Gợi ý messaging khi gọi</div>
+        <ul>
+          <li>Nhấn vào <strong>"tài xế nhiều, nhận nhanh"</strong> — đáp ứng top 1 yếu tố</li>
+          <li>Nhắc đến <strong>giá minh bạch, không phí ẩn</strong> — đáp ứng top 2</li>
+          <li>Tránh hứa hẹn nếu supply đang yếu ở khu vực KH</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: NGÀY TẠO TK -->
+<section>
+  <div class="sec-title"><span class="dot"></span>5. Phân Bổ Ngày Đăng Ký</div>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:12px">Tập KH đăng ký trong 12 ngày. Đỉnh vào cuối tuần 29/3 và ngày 2/4. KH đăng ký càng gần hiện tại càng cần gọi sớm.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Ngày tạo TK</th><th>Thứ</th><th style="text-align:right">Số KH</th><th>Ghi chú</th></tr></thead>
+      <tbody>
+        <tr><td>29/03/2026</td><td>Thứ 7</td><td class="num" style="color:var(--accent);font-weight:800">82</td><td><span class="pill pill-orange">Cao nhất</span> KH cuối tuần — gọi sáng đầu tuần sau</td></tr>
+        <tr><td>30/03/2026</td><td>Chủ nhật</td><td class="num">59</td><td>Cuối tuần</td></tr>
+        <tr><td>31/03/2026</td><td>Thứ 2</td><td class="num" style="color:var(--sub)">14</td><td><span class="pill pill-gray">Thấp</span></td></tr>
+        <tr><td>01/04/2026</td><td>Thứ 3</td><td class="num">63</td><td>Tăng trở lại đầu tháng</td></tr>
+        <tr><td>02/04/2026</td><td>Thứ 4</td><td class="num" style="color:var(--blue);font-weight:700">75</td><td><span class="pill pill-blue">Cao thứ 2</span></td></tr>
+        <tr><td>03/04/2026</td><td>Thứ 5</td><td class="num">46</td><td></td></tr>
+        <tr><td>04/04/2026</td><td>Thứ 6</td><td class="num">34</td><td></td></tr>
+        <tr><td>05/04/2026</td><td>Thứ 7</td><td class="num">19</td><td></td></tr>
+        <tr><td>06/04/2026</td><td>Chủ nhật</td><td class="num">28</td><td></td></tr>
+        <tr><td>07/04/2026</td><td>Thứ 2</td><td class="num">29</td><td></td></tr>
+        <tr><td>08/04/2026</td><td>Thứ 3</td><td class="num">20</td><td></td></tr>
+        <tr><td>09/04/2026</td><td>Thứ 4</td><td class="num">12</td><td>Mới nhất — gọi sớm nhất</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+
+<!-- SECTION 6: SME/ENTERPRISE PROFILE -->
+<section>
+  <div class="sec-title"><span class="dot"></span>6. Profile Doanh Nghiệp — KH SME & Enterprise (n=16)</div>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:16px">Dữ liệu thu thập qua khảo sát trong cuộc gọi · Hình thức KD: n=16 · Loại hình KD: n=16 · Số năm hoạt động: n=17</p>
+
+  <!-- 3 analysis blocks -->
+  <div class="three-col" style="margin-bottom:16px">
+
+    <!-- Block 1: Hình thức KD -->
+    <div style="background:#fff8f2;border:1px solid #ffd9b8;border-radius:10px;padding:16px;border-left:4px solid var(--accent)">
+      <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);margin-bottom:2px">Hình Thức Kinh Doanh</div>
+      <div style="font-size:11px;color:var(--sub);margin-bottom:12px;font-style:italic">Online / Offline / Cả hai</div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name" style="font-weight:700;color:var(--accent)">Cả Online + Offline</span><span class="val" style="color:var(--accent)">43.75%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:43.75%;background:var(--accent)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Offline</span><span class="val">37.50%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:37.5%;background:var(--blue)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Online</span><span class="val">18.75%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:18.75%;background:var(--sub)"></div></div>
+      </div>
+      <div style="margin-top:12px;background:#fff;border-radius:6px;padding:10px 12px;border:1px solid #ffd9b8">
+        <div style="font-size:11px;font-weight:800;color:var(--accent);margin-bottom:4px">→ 81% có hoạt động Offline</div>
+        <div style="font-size:11px;color:var(--sub);line-height:1.6">Nhu cầu giao hàng thực tế cao — không chỉ fulfil online. Ưu tiên giới thiệu Truck Delivery & SLA giao trong ngày.</div>
+      </div>
+    </div>
+
+    <!-- Block 2: Loại hình KD -->
+    <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:16px;border-left:4px solid var(--blue)">
+      <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--blue);margin-bottom:2px">Loại Hình Kinh Doanh</div>
+      <div style="font-size:11px;color:var(--sub);margin-bottom:12px;font-style:italic">Hộ kinh doanh / Công ty / Chuỗi</div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name" style="font-weight:700;color:var(--blue)">Hộ kinh doanh</span><span class="val" style="color:var(--blue)">50.00%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--blue)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name" style="font-weight:700;color:var(--green)">Công ty</span><span class="val" style="color:var(--green)">50.00%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--green)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">Chuỗi cửa hàng</span><span class="val">0.00%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:0%;background:var(--red)"></div></div>
+      </div>
+      <div style="margin-top:12px;background:#fff;border-radius:6px;padding:10px 12px;border:1px solid #bfdbfe">
+        <div style="font-size:11px;font-weight:800;color:var(--blue);margin-bottom:4px">→ Phân bổ đồng đều — 2 script riêng</div>
+        <div style="font-size:11px;color:var(--sub);line-height:1.6">Hộ KD: quyết định nhanh, ưu tiên giá & tốc độ. Công ty: cần báo giá, hợp đồng, hóa đơn VAT — assign sale có kinh nghiệm B2B.</div>
+      </div>
+    </div>
+
+    <!-- Block 3: Số năm hoạt động -->
+    <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:16px;border-left:4px solid var(--green)">
+      <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--green);margin-bottom:2px">Số Năm Hoạt Động</div>
+      <div style="font-size:11px;color:var(--sub);margin-bottom:12px;font-style:italic">Mới KD / 1–2 năm / >2 năm</div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name" style="font-weight:700;color:var(--green)">&gt;2 năm</span><span class="val" style="color:var(--green)">47.06%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:47.06%;background:var(--green)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name" style="font-weight:700;color:var(--yellow)">Mới kinh doanh</span><span class="val" style="color:var(--yellow)">41.18%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:41.18%;background:var(--yellow)"></div></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-label"><span class="name">1–2 năm</span><span class="val">11.76%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:11.76%;background:var(--sub)"></div></div>
+      </div>
+      <div style="margin-top:12px;background:#fff;border-radius:6px;padding:10px 12px;border:1px solid #bbf7d0">
+        <div style="font-size:11px;font-weight:800;color:var(--green);margin-bottom:4px">→ 41% mới KD = cơ hội định vị sớm</div>
+        <div style="font-size:11px;color:var(--sub);line-height:1.6">Doanh nghiệp mới chưa có đối tác giao hàng cố định. Offer gói dùng thử hoặc ưu đãi 10 đơn đầu để lock-in trước đối thủ.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Synthesis insight row -->
+  <div style="background:#f8f9fc;border:1px solid var(--border);border-radius:10px;padding:16px 20px">
+    <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--sub);margin-bottom:12px">Tổng Hợp — Đề Xuất Tiếp Cận</div>
+    <div class="three-col" style="gap:14px">
+      <div style="border-left:3px solid var(--accent);padding-left:12px">
+        <div style="font-size:12px;font-weight:700;color:var(--accent);margin-bottom:4px">Ưu tiên Truck Delivery</div>
+        <div style="font-size:12px;color:var(--sub);line-height:1.7">81% KH có hoạt động Offline → nhu cầu vận chuyển hàng hóa thực tế. Demo Truck + cam kết SLA là điểm chốt sale mạnh nhất.</div>
+      </div>
+      <div style="border-left:3px solid var(--blue);padding-left:12px">
+        <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:4px">Tách script HKD vs Công ty</div>
+        <div style="font-size:12px;color:var(--sub);line-height:1.7">Hộ KD: nhanh, thực tế, giá cạnh tranh. Công ty: hợp đồng, hóa đơn VAT, SLA rõ ràng. Không dùng chung một kịch bản cho cả hai.</div>
+      </div>
+      <div style="border-left:3px solid var(--green);padding-left:12px">
+        <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:4px">Tấn công nhóm mới KD</div>
+        <div style="font-size:12px;color:var(--sub);line-height:1.7">41% chưa có đối tác giao hàng cố định — window cơ hội ngắn. Offer gói onboarding ưu đãi để chiếm vị trí mặc định trước đối thủ.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: REAL-TIME LEAD PROPOSAL -->
+<section>
+  <div class="sec-title"><span class="dot"></span>7. Đề Xuất Lead Real-Time Theo Thời Gian Tạo</div>
+  <p style="font-size:13px;color:var(--text);margin-bottom:6px">Thay vì chờ tổng hợp batch, đề xuất hệ thống <strong>trigger gọi ngay trong ngày</strong> khi KH mới đăng ký thỏa ≥1 trong 3 điều kiện dưới đây — khi intent còn cao nhất.</p>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:16px">Áp dụng thử nghiệm trên tập này: <strong>364/481 KH (75.7%)</strong> sẽ được trigger real-time.</p>
+
+  <!-- 3 trigger criteria -->
+  <div class="criteria-row" style="margin-bottom:20px">
+    <div class="criteria-card sme">
+      <div class="cc-icon">🏢</div>
+      <div class="cc-count">16</div>
+      <div class="cc-label">User type = SME / Cor</div>
+      <div class="cc-desc">
+        KH tự khai SME hoặc Enterprise khi đăng ký → gọi <strong>trong vòng 2 giờ</strong>.<br><br>
+        LTV cao nhất trong toàn tập. Cần assign AM cụ thể, không để queue chung.
+      </div>
+    </div>
+    <div class="criteria-card truck">
+      <div class="cc-icon">🚚</div>
+      <div class="cc-count">267</div>
+      <div class="cc-label">Chọn Truck / House Moving</div>
+      <div class="cc-desc">
+        KH thao tác chọn dịch vụ Truck Delivery hoặc House Moving → gọi <strong>trong ngày</strong>.<br><br>
+        Nhu cầu thường có timeline cụ thể, gọi sớm tránh mất vào app đối thủ.
+      </div>
+    </div>
+    <div class="criteria-card open">
+      <div class="cc-icon">📱</div>
+      <div class="cc-count">202</div>
+      <div class="cc-label">App open &gt; 10 lần</div>
+      <div class="cc-desc">
+        KH mở app hơn 10 lần kể từ khi đăng ký → gọi <strong>trong ngày</strong>.<br><br>
+        Hành vi tìm hiểu liên tục là tín hiệu intent mạnh, cần tiếp cận trước khi KH tự quyết định hoặc bỏ.
+      </div>
+    </div>
+  </div>
+
+  <!-- Daily volume table -->
+  <h2 class="section-h">Khối lượng lead real-time theo ngày (mô phỏng trên tập hiện tại)</h2>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:12px">Trung bình <strong>~30 lead/ngày</strong> cần gọi trong ngày — khối lượng khả thi cho 4–5 staff telesales.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Ngày tạo TK</th>
+          <th style="text-align:right">🏢 SME/Cor</th>
+          <th style="text-align:right">🚚 Truck/House</th>
+          <th style="text-align:right">📱 App &gt;10</th>
+          <th style="text-align:right;color:var(--accent)">Tổng trigger</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>29/03 (T7)</td><td class="num">0</td><td class="num">51</td><td class="num">39</td><td class="num" style="color:var(--accent);font-weight:800">66</td></tr>
+        <tr><td>30/03 (CN)</td><td class="num">3</td><td class="num">45</td><td class="num">24</td><td class="num" style="color:var(--accent);font-weight:800">51</td></tr>
+        <tr><td>31/03 (T2)</td><td class="num">0</td><td class="num">11</td><td class="num">4</td><td class="num">13</td></tr>
+        <tr><td>01/04 (T3)</td><td class="num">2</td><td class="num">40</td><td class="num">37</td><td class="num" style="color:var(--accent);font-weight:800">54</td></tr>
+        <tr><td>02/04 (T4)</td><td class="num">0</td><td class="num">34</td><td class="num">43</td><td class="num" style="color:var(--accent);font-weight:800">60</td></tr>
+        <tr><td>03/04 (T5)</td><td class="num">2</td><td class="num">19</td><td class="num">23</td><td class="num">35</td></tr>
+        <tr><td>04/04 (T6)</td><td class="num">3</td><td class="num">16</td><td class="num">9</td><td class="num">21</td></tr>
+        <tr><td>05/04 (T7)</td><td class="num">1</td><td class="num">9</td><td class="num">5</td><td class="num">13</td></tr>
+        <tr><td>06/04 (CN)</td><td class="num">2</td><td class="num">12</td><td class="num">7</td><td class="num">17</td></tr>
+        <tr><td>07/04 (T2)</td><td class="num">2</td><td class="num">18</td><td class="num">7</td><td class="num">20</td></tr>
+        <tr><td>08/04 (T3)</td><td class="num">0</td><td class="num">8</td><td class="num">3</td><td class="num">10</td></tr>
+        <tr><td>09/04 (T4)</td><td class="num">1</td><td class="num">4</td><td class="num">1</td><td class="num">4</td></tr>
+        <tr style="background:#fafafa;font-weight:700"><td>Tổng</td><td class="num">16</td><td class="num">267</td><td class="num">202</td><td class="num" style="color:var(--accent)">364</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="insight insight-orange" style="margin-top:14px">
+    <div class="insight-title">⚙️ Đề Xuất Vận Hành</div>
+    <ul>
+      <li><strong>SME/Cor:</strong> Gọi trong vòng <strong>15 phút – 1 tiếng</strong> kể từ khi có event đăng ký, hoặc ngay đầu ca trực gần nhất nếu ngoài giờ làm việc — assign 1 AM cố định, không queue chung với tập thường</li>
+      <li><strong>Truck/House Moving:</strong> Gọi trong vòng <strong>15 phút – 1 tiếng</strong> kể từ khi KH thao tác chọn dịch vụ trên app — nhu cầu có timeline cụ thể, tiếp cận càng sớm càng tránh mất vào app đối thủ</li>
+      <li><strong>App open &gt;10:</strong> Gọi trong ngày — điều kiện này phù hợp để chạy <em>alert tự động</em> từ hệ thống CRM khi đạt ngưỡng</li>
+      <li><strong>Cuối tuần (T7–CN):</strong> Lượng đăng ký cao (~50–66 lead/ngày) — cần staff trực hoặc lên lịch gọi đầu tuần ngay</li>
+      <li><strong>KPI đo lường:</strong> Tỷ lệ gọi trong ngày tạo TK / Tỷ lệ convert đơn đầu tiên trong 7 ngày sau gọi</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>Ahamove · FP&A / Telesales HAN · Phân tích từ Book2.xlsx · April 2026</p>
+</footer>
+
+</div>
+</body>
+</html>
